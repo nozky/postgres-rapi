@@ -10,7 +10,6 @@
 <style>
   * {
     box-sizing: border-box;
-
   }
   body {
     margin: 0;
@@ -19,12 +18,15 @@
     background: linear-gradient(skyblue, lightblue, lightgreen);
     min-height: 100vh;
   }
+  span{
+    font-weight: bold;
+  }
 </style>
 <body>
-  <h1>Hello world</h1>
+  <h1>Hello world!</h1>
   <main>
-    <p>This server is running on a Raspberry pi using Docker with container running Postgres Databasebr
-      <br>Serve using Nodejs, Express, Prisma for mapper and <span>exposing to the world using CloudFlared tunnel</span>
+    <p>This server is running on a <span>Raspberry pi</span> using <span>Docker</span> with container running <span>Postgres Database</span>
+      <br>Serve using <span>Nodejs, Express, Prisma for mapper and </span>exposing to the world using <span>CloudFlared tunnel</span>
     </p>
     <hr>
   </main>
@@ -45,10 +47,10 @@
       <h4>User API</h4>
       <ul>
         <li>
-          <p>List all User <br><a href="https://postgres.nozky.ml/user">https://postgres.nozky.ml/user</a></p>
+          <p>List all User <br><a href="https://postgres.nozky.ml/user">GET: https://postgres.nozky.ml/user</a></p>
         </li>
         <li>
-          <p>Find User by ID <br><a>https://postgres.nozky.ml/user/id?id="userId"</a></p>
+          <p>Find User by ID <br><a>GET: https://postgres.nozky.ml/user/id?id="userId"</a></p>
         </li>
         <li>
           <p>Add user <br><a >POST: https://postgres.nozky.ml/user</a></p>

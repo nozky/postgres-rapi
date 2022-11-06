@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Postgres Server</title>
+</head>
+
+<style>
+  * {
+    box-sizing: border-box;
+
+  }
+  body {
+    margin: 0;
+    padding: 5em;
+    font-size: 1.2rem;
+    background: linear-gradient(skyblue, lightblue, lightgreen);
+    min-height: 100vh;
+  }
+</style>
+<body>
+  <h1>Hello world</h1>
+  <main>
+    <p>This server is running on a Raspberry pi using Docker with container running Postgres Database</p>
+    <p>Serve using Nodejs, Express, Prisma for mapper and <span>exposing to the world using CloudFlared tunnel</span></p>
+    <hr>
+  </main>
+
+  <div>
+    <h2>Technology in used</h2>
+    <ul>
+      <li>Node.js</li>
+      <li>TypeScript</li>
+      <li>Express.js</li>
+      <li>PosgresQl</li>
+    </ul>
+  </div>
+  <hr>
+    <div>
+      <h3>API's</h3>
+      <h4>User API</h4>
+      <ul>
+        <li>
+          <p>List all User <br><a href="https://postgres.nozky.ml/user">https://postgres.nozky.ml/user</a></p>
+        </li>
+        <li>
+          <p>Find User by ID <br><a>https://postgres.nozky.ml/user/id?id="userId"</a></p>
+        </li>
+        <li>
+          <p>Add user <br><a >POST: https://postgres.nozky.ml/user</a></p>
+          <code>body: {
+            "id": "1",
+            "name": "YourName",
+            "email": "yourName@mail.com",
+            "age": 0
+          }
+          </code>
+        </li>
+        <li>
+          <p>Update user <br><a >POST: https://postgres.nozky.ml/user/Update</a></p>
+          <code>body: {
+            "id": "1",
+            "name": "Updated name",
+            "email": "Updated yourName@mail.com",
+            "age": 0
+          }
+          </code>
+        </li>
+        <li>
+          <p>Detele user <br><a >POST: https://postgres.nozky.ml/user/Delete</a></p>
+          <code>body: {
+            "id": "userId"
+          }</code>
+        </li>
+      </ul>
+    </div>
+  <hr>
+  <p>This is just a test to see if Raspberry pi 4 will be able to handle small scale businesses. <br>
+     <span>Created by: Norvillie Villaruel</span><br> 
+     <span>November 6 2022</span> </p>
+</body>
+</html>

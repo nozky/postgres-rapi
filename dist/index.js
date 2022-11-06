@@ -7,6 +7,7 @@ const express_1 = __importDefault(require("express"));
 const user_1 = require("./route/user");
 const post_1 = require("./route/post");
 const app = (0, express_1.default)();
+app.use((req, res, next) => { console.log('Request'), next(); });
 app.use(express_1.default.json());
 app.use(express_1.default.urlencoded({ extended: true }));
 app.use('/user', user_1.user);

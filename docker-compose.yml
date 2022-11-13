@@ -1,0 +1,23 @@
+version: '3.3'
+
+services:
+   postgres:
+      image: postgres
+      container_name: postgres
+      ports:
+         - 5432:5432
+      environment:
+         - POSTGRES_USER=nozky
+         - POSTGRES_PASSWORD=nozky
+         - POSTGRES_DB=test-db
+      restart: always
+   express:
+      container_name: express
+      build: .
+      depends_on:
+         - postgres
+      ports:
+         - 3000:3000			
+      restart: always
+		
+	

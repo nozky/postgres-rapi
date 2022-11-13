@@ -10,6 +10,8 @@ services:
          - POSTGRES_USER=nozky
          - POSTGRES_PASSWORD=nozky
          - POSTGRES_DB=test-db
+      volumes:
+         - /db/data:/var/lib/postgres/data   
       restart: always
    express:
       container_name: express

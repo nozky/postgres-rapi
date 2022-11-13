@@ -19,12 +19,12 @@ post.post('/', async (req, res) => {
     })
     res.status(200).json(post)
   } catch (error:any) {
-    res.status(400).send(error.message)
+   error instanceof Error && res.status(400).send(error.message)
   }
 })
 
 // update post
-post.post('/update', (req, res) => {
+post.put('/update', (req, res) => {
   const body:Post = req.body
   try {
     prisma.post.update({
@@ -37,8 +37,22 @@ post.post('/update', (req, res) => {
         authorId: body.authorId
       }
     })
-  }catch (error:any){
-    res.status(400).json(error?.message)
+  }catch (error){
+     error instanceof Error && res.status(400).json(error?.message)
+  }
+})
+
+post.delete ('/delete', async (req, res) => {
+  const query:{id?:string} = req.query
+  try {
+  const post = await prisma.post.delete({
+    where: {
+      id: query.id
+    }
+  })
+  res.status(200).json(post)  
+  } catch ( error ){
+    error instanceof Error && res.status(400).json(error.message)
   }
 })
 
@@ -48,6 +62,6 @@ post.get('/', async (req, res) => {
     const posts = await prisma.post.findMany()
     res.status(200).json(posts)
   } catch (error:any) {
-    res.status(400).send(error.message)
+    error instanceof Error &&  res.status(400).send(error.message)
   }
 })

@@ -93,7 +93,7 @@
         </li>
 
         <li>
-          <p>Update user <br><a >POST: https://postgres.nozky.ml/user/Update</a></p>
+          <p>Update user <br><a >PUT: https://postgres.nozky.ml/user/Update</a></p>
           <code>body: {
             "id": "1",
             "name": "Updated name",
@@ -120,6 +120,15 @@
         </li>
 
         <li>
+          <p>Find all Post from Author <br><a >GET: https://postgres.nozky.ml/post/author?authorId=authorId</a></p>
+        </li>
+
+
+        <li>
+          <p>Find single Post <br><a >GET: https://postgres.nozky.ml/post/id?id=postId</a></p>
+        </li>
+
+        <li>
           <p>Add Post <br><a >POST: https://postgres.nozky.ml/post</a></p>
           <code>body: {
             "title": "Your unique title",
@@ -143,8 +152,6 @@
           <p>Delete Post <br><a >DELETE: https://postgres.nozky.ml/post/delete/id?id=postId</a></p>
           <code>body: {
             "id": "post id"
-            "title": "Your unique title",
-            "body": "post body",
           }
           </code>
         </li>
@@ -157,22 +164,7 @@
           </code>
         </li>
 
-        <li>
-          <p>Find all Post from Author <br><a >GET: https://postgres.nozky.ml/post/authorId</a></p>
-          <code>body: {
-            "authorId": "author id"
-          }
-          </code>
-        </li>
-
-
-        <li>
-          <p>Find single Post <br><a >GET: https://postgres.nozky.ml/post/id</a></p>
-          <code>body: {
-            "id": "post id"
-          }
-          </code>
-        </li>
+       
 
       </ul>
     </div>

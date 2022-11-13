@@ -79,10 +79,10 @@ post.delete('/deleteall', async (req, res) => {
 // find post 
 post.get('/id', async (req, res) => {
   try {
-    const body:IPost = req.body
+    const query:{id?:string} = req.query
     const post = await prisma.post.findUnique({
       where: {
-        id: body.id
+        id: query.id
       }
     })
     res.status(200).json(post)
@@ -91,13 +91,14 @@ post.get('/id', async (req, res) => {
   }
 })
 
-// find all post from author
+// find all post with author
 post.get('/author', async (req, res) => {
+  console.log( req.query)
   try {
-    const body:IPost = req.body
+    const query:{ authorId?:string} = req.query
     const posts = await prisma.post.findMany({
       where:{
-        authorId: { contains: body.authorId, mode: 'insensitive'}
+        authorId: { contains: query.authorId, mode: 'insensitive'}
       }
     })
     res.status(200).json(posts)

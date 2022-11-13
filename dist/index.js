@@ -10,6 +10,7 @@ const app = (0, express_1.default)();
 app.use((req, res, next) => { console.log('Request'), next(); });
 app.use(express_1.default.json());
 app.use(express_1.default.urlencoded({ extended: true }));
+app.use(express_1.default.static('public'));
 app.use('/user', user_1.user);
 app.use('/post', post_1.post);
 app.listen(3000, () => {

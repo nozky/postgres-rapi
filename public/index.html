@@ -21,11 +21,34 @@
   span{
     font-weight: bold;
   }
+
+  .title {
+    text-align: center;
+    color: purple;
+  }
+
+  ul {
+    padding-bottom: 1rem;
+  }
+
+  ul li {
+    padding: 0.5rem;
+  }
+
+  code {
+    background: black;
+    color: white;
+    padding: 1rem;
+    border-radius: 3px;
+    font-size: small;
+  }
 </style>
+
+
 <body>
-  <h1>Hello world!</h1>
+  <h1 class="title">Hello world!</h1>
   <main>
-    <p>This server is running on a <span>Raspberry pi</span> using <span>Docker</span> with container running <span>Postgres Database</span>
+    <p>This server is running on a <span>Raspberry pi</span> in my house using <span>Docker</span> and container running <span>Postgres Database</span>
       <br>Serve using <span>Nodejs, Express, Prisma</span> and exposing to the world using <span>CloudFlared tunnel</span>
     </p>
     <hr>
@@ -49,9 +72,15 @@
         <li>
           <p>List all User <br><a href="https://postgres.nozky.ml/user">GET: https://postgres.nozky.ml/user</a></p>
         </li>
+
         <li>
           <p>Find User by ID <br><a>GET: https://postgres.nozky.ml/user/id?id="userId"</a></p>
         </li>
+
+        <li>
+          <p>Find User that contain name <br><a>GET: https://postgres.nozky.ml/user/user/name?name="userName"</a></p>
+        </li>
+
         <li>
           <p>Add user <br><a >POST: https://postgres.nozky.ml/user</a></p>
           <code>body: {
@@ -62,6 +91,7 @@
           }
           </code>
         </li>
+
         <li>
           <p>Update user <br><a >POST: https://postgres.nozky.ml/user/Update</a></p>
           <code>body: {
@@ -72,12 +102,78 @@
           }
           </code>
         </li>
+
         <li>
           <p>Detele user <br><a >POST: https://postgres.nozky.ml/user/Delete</a></p>
           <code>body: {
             "id": "userId"
           }</code>
         </li>
+
+      </ul>
+
+      <hr>
+      <h4>Post API</h4>
+      <ul>
+        <li>
+          <p>List all Post <br><a href="https://postgres.nozky.ml/post/all">GET: https://postgres.nozky.ml/post/all</a></p>
+        </li>
+
+        <li>
+          <p>Add Post <br><a >POST: https://postgres.nozky.ml/post</a></p>
+          <code>body: {
+            "title": "Your unique title",
+            "body": "post body",
+            "authorId": "Existing authorId"
+          }
+          </code>
+        </li>
+
+        <li>
+          <p>Update Post <br><a >PUT: https://postgres.nozky.ml/post/</a></p>
+          <code>body: {
+            "id": "post id"
+            "title": "Your unique title",
+            "body": "post body",
+          }
+          </code>
+        </li>
+
+        <li>
+          <p>Delete Post <br><a >DELETE: https://postgres.nozky.ml/post/delete/id?id=postId</a></p>
+          <code>body: {
+            "id": "post id"
+            "title": "Your unique title",
+            "body": "post body",
+          }
+          </code>
+        </li>
+
+        <li>
+          <p>Delete all Post from author <br><a >DELETE: https://postgres.nozky.ml/post/deleteall</a></p>
+          <code>body: {
+            "authorId": "authorId"
+          }
+          </code>
+        </li>
+
+        <li>
+          <p>Find all Post from Author <br><a >GET: https://postgres.nozky.ml/post/authorId</a></p>
+          <code>body: {
+            "authorId": "author id"
+          }
+          </code>
+        </li>
+
+
+        <li>
+          <p>Find single Post <br><a >GET: https://postgres.nozky.ml/post/id</a></p>
+          <code>body: {
+            "id": "post id"
+          }
+          </code>
+        </li>
+
       </ul>
     </div>
   <hr>

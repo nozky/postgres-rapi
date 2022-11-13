@@ -6,9 +6,11 @@ COPY package*.json ./
 
 RUN yarn install
 
-COPY . .
+COPY . . 
 
 RUN npx prisma generate
+
+# RUN npx prisma migrate dev
 
 RUN npx tsc
 

@@ -4,7 +4,9 @@ import { user } from './route/user'
 import { post } from './route/post'
 const app = express()
 
-app.use((req, res, next)=> { console.log('Request'), next()  })
+let x = 0
+
+app.use((req, res, next)=> { console.log('Request count since server started:  ', x += 1  ), next()  })
 app.use(express.json())
 app.use(express.urlencoded({ extended: true} ))
 

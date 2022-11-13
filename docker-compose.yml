@@ -14,7 +14,6 @@ services:
          - type: bind
            source: /db/postgres/data
            target: /var/lib/postgres/data
-           read_on: false
       restart: always
    express:
       container_name: express
